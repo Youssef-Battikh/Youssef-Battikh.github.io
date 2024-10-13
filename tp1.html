@@ -31,28 +31,28 @@
       <div id="tp01" class="project-showcase">
         <h3>Activity 1.2: Qui êtes vous ?</h3>
         <div class="code-block">
-          <pre><code>import java.util.Scanner;
-public class Act1_2 {
-	public static void main(String [] args){
-		Scanner scanner = new Scanner( System.in );
-		System.out.println("— 0 : Gérant");
-		System.out.println("— 1 : Client");
-		int x = scanner.nextInt();
-		switch(x){
-		case 0:
-			System.out.println("— 0 : Ajouter un article");
-			System.out.println("— 1 : Modifier un article");
-			System.out.println("— 2 : Consulter les articles");
-			System.out.println("— 3 : Supprimer un article");
-			break;
-		case 1:
-			System.out.println("Bonjour cher/chère client(e)");
-			break;
-		default:
-			System.out.println("Cette action n’est pas autorisée");
-			break;
-		}
-	}
+          <pre><code><span class="keyword">import java.util.Scanner</span>;
+<span class="keyword">public class </span><span class="method">Act1_2</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String [] args) {
+        <span class="keyword">Scanner</span> scanner = <span class="keyword">new</span> <span class="keyword">Scanner</span>( <span class="keyword">System.in</span> );
+        <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Gérant"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Client"</span>);
+        <span class="keyword">int</span> x = scanner.<span class="method">nextInt</span>();
+        <span class="keyword">switch</span>(x) {
+            <span class="keyword">case</span> <span class="number">0</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Ajouter un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Modifier un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 2 : Consulter les articles"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 3 : Supprimer un article"</span>);
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="number">1</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Bonjour cher/chère client(e)"</span>);
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Cette action n’est pas autorisée"</span>);
+                <span class="keyword">break</span>;
+        }
+    }
 }</code></pre>
         </div>
         <div class="result-block">
