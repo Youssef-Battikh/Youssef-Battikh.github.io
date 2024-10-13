@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Java Compte-rendu Blog</h1>
+      <p class="subtitle">Battikh Youssef</p>
+    </header>
+    <main>
+      <div id="tp02" class="project-showcase">
+        <h3>TP02: Interface Implementation</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">public interface</span> <span class="method">Shape</span> {
+        <span class="keyword">double</span> <span class="method">calculateArea</span>();
+    }
+    
+    <span class="keyword">public class</span> <span class="method">Circle</span> <span class="keyword">implements</span> Shape {
+        <span class="keyword">private</span> <span class="keyword">double</span> radius;
+    
+        <span class="keyword">public</span> <span class="method">Circle</span>(<span class="keyword">double</span> radius) {
+            <span class="keyword">this</span>.radius = radius;
+        }
+    
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="keyword">double</span> <span class="method">calculateArea</span>() {
+            <span class="keyword">return</span> Math.<span class="method">PI</span> * radius * radius;
+        }
+    }</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Execution Result:</strong></p>
+          <p>Area of circle with radius 5: 78.53981633974483</p>
+        </div>
+      </div>
+      <a href="Index.html" class="cta-button">Back to Home page</a>
+    </main>
+  </body>
+</html>

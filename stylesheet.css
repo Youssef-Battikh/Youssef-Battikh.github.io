@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+header {
+  background-color: #1a5f7a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 5px 5px 0 0;
+}
+h1 {
+  margin-bottom: 0;
+}
+.subtitle {
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+main {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  color: #1a5f7a;
+  border-bottom: 2px solid #1a5f7a;
+  padding-bottom: 0.5rem;
+}
+ul {
+  padding-left: 20px;
+}
+code {
+  padding: 2px 4px;
+  font-family: monospace;
+}
+.cta-button,
+.project-button {
+  display: inline-block;
+  background-color: #1a5f7a;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  transition: background-color 0.3s ease;
+}
+.cta-button:hover,
+.project-button:hover {
+  background-color: #154a5f;
+}
+.project-showcase {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+.code-block {
+  background-color: #282c34;
+  color: #abb2bf;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+.code-block .keyword {
+  color: #c678dd;
+}
+.code-block .string {
+  color: #98c379;
+}
+.code-block .comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.code-block .number {
+  color: #d19a66;
+}
+.code-block .method {
+  color: #61afef;
+}
+.result-block {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.comment1{
+  color: #5c6370;
+  font-style: italic;
+}

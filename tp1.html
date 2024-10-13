@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Java Compte-rendu Blog</h1>
+      <p class="subtitle">Battikh Youssef</p>
+    </header>
+    <main>
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.1: Hello World</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">public class </span><span class="method">Act1_1</span> {
+    <span class="keyword">public static void</span><span class="method"> main</span>(String [] args){
+        <span class="keyword">System.out.println</span>(<span class="string">"Soyez les bienvenus !!"</span>);
+    }
+ }</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Execution Result:</strong></p>
+          <p>Soyez les bienvenus !!</p>
+        </div>
+      </div>
+
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.2: Qui êtes vous ?</h3>
+        <div class="code-block">
+          <pre><code>import java.util.Scanner;
+public class Act1_2 {
+	public static void main(String [] args){
+		Scanner scanner = new Scanner( System.in );
+		System.out.println("— 0 : Gérant");
+		System.out.println("— 1 : Client");
+		int x = scanner.nextInt();
+		switch(x){
+		case 0:
+			System.out.println("— 0 : Ajouter un article");
+			System.out.println("— 1 : Modifier un article");
+			System.out.println("— 2 : Consulter les articles");
+			System.out.println("— 3 : Supprimer un article");
+			break;
+		case 1:
+			System.out.println("Bonjour cher/chère client(e)");
+			break;
+		default:
+			System.out.println("Cette action n’est pas autorisée");
+			break;
+		}
+	}
+}</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Execution Result:</strong></p>
+          <p>
+            — 0 : Gérant
+            <br>
+            — 1 : Client
+            <br><span class="comment1" >if the user has typed 0 :</span>
+            <br>
+            — 0 : Ajouter un article
+            <br>
+            — 1 : Modifier un article
+            <br>
+            — 2 : Consulter les articles
+            <br>
+            — 3 : Supprimer un article
+          </p>
+        </div>
+      </div>
+
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.3: Quels produits propose "TechStore"</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">import java.util.ArrayList</span>;
+<span class="keyword">public class </span><span class="method">Act1_3</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String [] args) {
+        <span class="keyword">ArrayList&lt;Integer&gt;</span> ID = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;Integer&gt;</span>();
+        ID.<span class="method">add</span>(<span class="number">0</span>);
+        ID.<span class="method">add</span>(<span class="number">1</span>);
+        ID.<span class="method">add</span>(<span class="number">2</span>);
+        ID.<span class="method">add</span>(<span class="number">3</span>);
+        ID.<span class="method">add</span>(<span class="number">4</span>);
+
+        <span class="keyword">ArrayList&lt;String&gt;</span> Reference = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;String&gt;</span>();
+        Reference.<span class="method">add</span>(<span class="string">"Prelt50"</span>);
+        Reference.<span class="method">add</span>(<span class="string">"ÉeB21"</span>);
+        Reference.<span class="method">add</span>(<span class="string">"SpNo2"</span>);
+        Reference.<span class="method">add</span>(<span class="string">"Mu8a3"</span>);
+        Reference.<span class="method">add</span>(<span class="string">"SpA4"</span>);
+
+        <span class="keyword">ArrayList&lt;String&gt;</span> Nom = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;String&gt;</span>();
+        Nom.<span class="method">add</span>(<span class="string">"PC Portable Dell Vostro 3500"</span>);
+        Nom.<span class="method">add</span>(<span class="string">"Écouteur JBL T125BT"</span>);
+        Nom.<span class="method">add</span>(<span class="string">"Smartphone INFINIX Hot 10"</span>);
+        Nom.<span class="method">add</span>(<span class="string">"Micro Casque 588 Filaire"</span>);
+        Nom.<span class="method">add</span>(<span class="string">"Smartphone NOKIA C1"</span>);
+
+        <span class="keyword">ArrayList&lt;Double&gt;</span> Prix = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;Double&gt;</span>();
+        Prix.<span class="method">add</span>(<span class="number">1999.000</span>);
+        Prix.<span class="method">add</span>(<span class="number">129.000</span>);
+        Prix.<span class="method">add</span>(<span class="number">439.000</span>);
+        Prix.<span class="method">add</span>(<span class="number">9.900</span>);
+        Prix.<span class="method">add</span>(<span class="number">185.000</span>);
+    }
+}</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Execution Result:</strong></p>
+          <p>
+            <span class="comment1" >empty output </span>
+          </p>
+        </div>
+      </div>
+
+      <a href="Index.html" class="cta-button">Back to Home page</a>
+    </main>
+  </body>
+</html>
