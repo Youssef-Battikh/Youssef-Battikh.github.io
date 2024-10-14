@@ -59,16 +59,16 @@
           <p><strong>Execution Result:</strong></p>
           <p>
             — 0 : Gérant
-            <br>
+            <br />
             — 1 : Client
-            <br><span class="comment1" >if the user has typed 0 :</span>
-            <br>
+            <br /><span class="comment1">if the user has typed 0 :</span>
+            <br />
             — 0 : Ajouter un article
-            <br>
+            <br />
             — 1 : Modifier un article
-            <br>
+            <br />
             — 2 : Consulter les articles
-            <br>
+            <br />
             — 3 : Supprimer un article
           </p>
         </div>
@@ -113,19 +113,101 @@
         <div class="result-block">
           <p><strong>Execution Result:</strong></p>
           <p>
-            <span class="comment1" >empty output </span>
+            <span class="comment1">empty output </span>
           </p>
         </div>
       </div>
 
       <div id="tp01" class="project-showcase">
-        <h3>Activity 1.3: Quels produits propose "TechStore"</h3>
+        <h3>Activity 1.4: Ajouter un article</h3>
         <div class="code-block">
-          <pre><code></code></pre>
+          <pre><code><span class="keyword">import java.util.ArrayList</span>;
+<span class="keyword">import java.util.Scanner</span>;
+
+<span class="keyword">public class </span><span class="method">act1_4</span> {
+
+    <span class="keyword">static ArrayList&lt;Integer&gt;</span> ID = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;Integer&gt;</span>();
+    <span class="keyword">static ArrayList&lt;String&gt;</span> Reference = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;String&gt;</span>();
+    <span class="keyword">static ArrayList&lt;String&gt;</span> Nom = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;String&gt;</span>();
+    <span class="keyword">static ArrayList&lt;Double&gt;</span> Prix = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;Double&gt;</span>();
+    <span class="keyword">static Scanner</span> scanner = <span class="keyword">new</span> <span class="keyword">Scanner</span>(<span class="keyword">System.in</span>);
+
+    <span class="keyword">static String</span> <span class="method">genererReference</span>(<span class="keyword">String</span> nNom, <span class="keyword">Integer</span> nID) {
+        <span class="keyword">String</span> nReference = <span class="string">""</span>;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nNom.<span class="method">length</span>(); i += <span class="number">5</span>) {
+            <span class="keyword">if</span> (nNom.<span class="method">charAt</span>(i) != <span class="string">' '</span>) {
+                nReference += nNom.<span class="method">charAt</span>(i);
+            }
+        }
+        nReference += nID;
+        <span class="keyword">return</span> nReference;
+    }
+
+    <span class="keyword">static void</span> <span class="method">ajouterArticle</span>(<span class="keyword">String</span> nNom, <span class="keyword">double</span> nPrix) {
+        <span class="keyword">int</span> nID = ID.<span class="method">size</span>();
+        <span class="keyword">String</span> nReference = <span class="method">genererReference</span>(nNom, nID);
+        ID.<span class="method">add</span>(nID);
+        Reference.<span class="method">add</span>(nReference);
+        Nom.<span class="method">add</span>(nNom);
+        Prix.<span class="method">add</span>(nPrix);
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(String [] args) {
+        <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Gérant"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Client"</span>);
+
+        <span class="keyword">int</span> x = scanner.<span class="method">nextInt</span>();
+        scanner.<span class="method">nextLine</span>();
+
+        <span class="keyword">switch</span>(x) {
+            <span class="keyword">case</span> <span class="number">0</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Ajouter un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Modifier un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 2 : Consulter les articles"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 3 : Supprimer un article"</span>);
+
+                <span class="keyword">int</span> y = scanner.<span class="method">nextInt</span>();
+                scanner.<span class="method">nextLine</span>();
+                <span class="keyword">switch</span>(y) {
+                    <span class="keyword">case</span> <span class="number">0</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le nom"</span>);
+                        <span class="keyword">String</span> nNom = scanner.<span class="method">nextLine</span>();
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le prix"</span>);
+                        <span class="keyword">double</span> nPrix = scanner.<span class="method">nextDouble</span>();
+                        <span class="method">ajouterArticle</span>(nNom, nPrix);
+                        <span class="keyword">break</span>;
+                }
+            <span class="keyword">case</span> <span class="number">1</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Bonjour cher/chère client(e)"</span>);
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Cette action n’est pas autorisée"</span>);
+                <span class="keyword">break</span>;
+        }
+    }
+}</code></pre>
         </div>
         <div class="result-block">
           <p><strong>Execution Result:</strong></p>
           <p>
+            <br />
+            — 0 : Ajouter un article
+            <br />
+            — 1 : Modifier un article
+            <br />
+            — 2 : Consulter les articles
+            <br />
+            — 3 : Supprimer un article
+            <br />
+            <span class="comment1">if the user has typed 0 :</span>
+            <br />
+            Saisir le nom
+            <br />
+            <span class="comment1">*User input*</span>
+            <br />
+            Saisir le Prix
+            <br>
+            <span class="comment1">*User input*</span>
           </p>
         </div>
       </div>

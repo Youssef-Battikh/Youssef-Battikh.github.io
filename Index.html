@@ -16,28 +16,208 @@
       <p>
         Object-Oriented Programming (OOP) is a programming paradigm that uses
         objects to design and organize code. Java is a popular language that
-        fully embraces OOP principles. This resume covers key concepts you'll
-        learn in our university workshop.
+        fully embraces OOP principles. This resume covers key concepts that we
+        have learnt in our university workshop so far.
       </p>
 
       <h2>Key OOP Concepts</h2>
-      <ul>
-        <li>
-          <strong>Classes and Objects:</strong> Learn how to create blueprints
-          (classes) and instances (objects).
-        </li>
-        <li>
-          <strong>Encapsulation:</strong> Understand data hiding and access
-          modifiers like <code>public</code>, <code>private</code>, and
-          <code>protected</code>.
-        </li>
-      </ul>
+
+      <h3>
+        Classes and Objects
+        <button
+          class="example-button"
+          onclick="toggleExample('classes-objects')"
+        >
+          Show Example
+        </button>
+      </h3>
+      <p>
+        Classes are blueprints for creating objects. They define the structure
+        and behavior of objects. Objects are instances of classes, representing
+        real-world entities in code.
+      </p>
+      <div id="classes-objects" class="code-example">
+        <div class="code-block">
+          <pre><code><span class="keyword">public class</span> <span class="method">Car</span> {
+    <span class="keyword">private</span> String model;
+    <span class="keyword">private</span> <span class="keyword">int</span> year;
+
+    <span class="keyword">public</span> <span class="method">Car</span>(String model, <span class="keyword">int</span> year) {
+        <span class="keyword">this</span>.model = model;
+        <span class="keyword">this</span>.year = year;
+    }
+
+    <span class="keyword">public void</span> <span class="method">displayInfo</span>() {
+        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"Car Model: "</span> + model + <span class="string">", Year: "</span> + year);
+    }
+}
+
+<span class="keyword">public class</span> <span class="method">Main</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        Car myCar = <span class="keyword">new</span> <span class="method">Car</span>(<span class="string">"Toyota Camry"</span>, 2022);
+        myCar.<span class="method">displayInfo</span>();
+    }
+}</code></pre>
+        </div>
+      </div>
+
+      <h3>
+        Encapsulation
+        <button class="example-button" onclick="toggleExample('encapsulation')">
+          Show Example
+        </button>
+      </h3>
+      <p>
+        Encapsulation is the bundling of data and the methods that operate on
+        that data within a single unit (class). It restricts direct access to
+        some of an object's components, which is a means of preventing
+        accidental interference and misuse of the methods and data.
+      </p>
+      <div id="encapsulation" class="code-example">
+        <div class="code-block">
+          <pre><code><span class="keyword">public class</span> <span class="method">BankAccount</span> {
+    <span class="keyword">private</span> <span class="keyword">double</span> balance;
+
+    <span class="keyword">public</span> <span class="method">BankAccount</span>(<span class="keyword">double</span> initialBalance) {
+        <span class="keyword">this</span>.balance = initialBalance;
+    }
+
+    <span class="keyword">public void</span> <span class="method">deposit</span>(<span class="keyword">double</span> amount) {
+        <span class="keyword">if</span> (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="method">withdraw</span>(<span class="keyword">double</span> amount) {
+        <span class="keyword">if</span> (amount > 0 && balance >= amount) {
+            balance -= amount;
+        }
+    }
+
+    <span class="keyword">public double</span> <span class="method">getBalance</span>() {
+        <span class="keyword">return</span> balance;
+    }
+}</code></pre>
+        </div>
+      </div>
+
+      <h3>
+        Constructors
+        <button class="example-button" onclick="toggleExample('constructors')">
+          Show Example
+        </button>
+      </h3>
+      <p>
+        Constructors are special methods used to initialize objects. They are
+        called when an object of a class is created and can be used to set
+        initial values for object attributes.
+      </p>
+      <div id="constructors" class="code-example">
+        <div class="code-block">
+          <pre><code><span class="keyword">public class</span> <span class="method">Person</span> {
+    <span class="keyword">private</span> String name;
+    <span class="keyword">private</span> <span class="keyword">int</span> age;
+
+    <span class="comment">// Default constructor</span>
+    <span class="keyword">public</span> <span class="method">Person</span>() {
+        <span class="keyword">this</span>.name = <span class="string">"John Doe"</span>;
+        <span class="keyword">this</span>.age = 30;
+    }
+
+    <span class="comment">// Parameterized constructor</span>
+    <span class="keyword">public</span> <span class="method">Person</span>(String name, <span class="keyword">int</span> age) {
+        <span class="keyword">this</span>.name = name;
+        <span class="keyword">this</span>.age = age;
+    }
+
+    <span class="keyword">public void</span> <span class="method">displayInfo</span>() {
+        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"Name: "</span> + name + <span class="string">", Age: "</span> + age);
+    }
+}
+
+<span class="keyword">public class</span> <span class="method">Main</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        Person person1 = <span class="keyword">new</span> <span class="method">Person</span>();
+        Person person2 = <span class="keyword">new</span> <span class="method">Person</span>(<span class="string">"Alice"</span>, 25);
+
+        person1.<span class="method">displayInfo</span>();
+        person2.<span class="method">displayInfo</span>();
+    }
+}</code></pre>
+        </div>
+      </div>
 
       <h2>Java-Specific OOP Features</h2>
-      <ul>
-        <li>Package system for organizing classes</li>
-        <li>Static methods and variables</li>
-      </ul>
+
+      <h3>
+        Package System for Organizing Classes
+        <button
+          class="example-button"
+          onclick="toggleExample('package-system')"
+        >
+          Show Example
+        </button>
+      </h3>
+      <p>
+        Java uses packages to organize classes and interfaces into namespaces.
+        Packages help in avoiding naming conflicts and provide a way to control
+        access to classes.
+      </p>
+      <div id="package-system" class="code-example">
+        <div class="code-block">
+          <pre><code><span class="comment">// File: com/example/math/Calculator.java</span>
+<span class="keyword">package</span> com.example.math;
+
+<span class="keyword">public class</span> <span class="method">Calculator</span> {
+    <span class="keyword">public int</span> <span class="method">add</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+        <span class="keyword">return</span> a + b;
+    }
+}
+
+<span class="comment">// File: Main.java</span>
+<span class="keyword">import</span> com.example.math.Calculator;
+
+<span class="keyword">public class</span> <span class="method">Main</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        Calculator calc = <span class="keyword">new</span> <span class="method">Calculator</span>();
+        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"2 + 3 = "</span> + calc.<span class="method">add</span>(2, 3));
+    }
+}</code></pre>
+        </div>
+      </div>
+
+      <h3>
+        Static Methods and Variables
+        <button
+          class="example-button"
+          onclick="toggleExample('static-methods')"
+        >
+          Show Example
+        </button>
+      </h3>
+      <p>
+        Static methods and variables belong to the class rather than any
+        specific instance of the class. They can be accessed without creating an
+        object of the class.
+      </p>
+      <div id="static-methods" class="code-example">
+        <div class="code-block">
+          <pre><code><span class="keyword">public class</span> <span class="method">MathUtils</span> {
+    <span class="keyword">public static final double</span> PI = 3.14159;
+
+    <span class="keyword">public static int</span> <span class="method">square</span>(<span class="keyword">int</span> num) {
+        <span class="keyword">return</span> num * num;
+    }
+}
+
+<span class="keyword">public class</span> <span class="method">Main</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"PI: "</span> + MathUtils.PI);
+        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"Square of 5: "</span> + MathUtils.<span class="method">square</span>(5));
+    }
+}</code></pre>
+        </div>
+      </div>
 
       <h2>Practical Applications</h2>
       <p>During the workshop, we've worked on two main activities:</p>
@@ -51,5 +231,19 @@
         Prerequisites: Basic Java knowledge
       </p>
     </main>
+
+    <script>
+      function toggleExample(id) {
+        var example = document.getElementById(id);
+        var display = example.style.display;
+        example.style.display =
+          display === "none" || display === "" ? "block" : "none";
+        var button = event.target;
+        button.textContent =
+          button.textContent === "Show Example"
+            ? "Hide Example"
+            : "Show Example";
+      }
+    </script>
   </body>
 </html>
