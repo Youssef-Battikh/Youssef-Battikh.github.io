@@ -88,34 +88,24 @@
       </p>
       <div id="constructors" class="code-example">
         <div class="code-block">
-          <pre><code><span class="keyword">public class</span> <span class="method">Person</span> {
-    <span class="keyword">private</span> String name;
-    <span class="keyword">private</span> <span class="keyword">int</span> age;
+          <pre><code><span class="keyword">class</span> <span class="method">Personne</span> {
+    <span class="keyword">private String</span> cin;
+    <span class="keyword">private String</span> nom;
+    <span class="keyword">private String</span> prenom;
+    <span class="keyword">private Adresse</span> adresse;
 
-    <span class="comment">// Default constructor</span>
-    <span class="keyword">public</span> <span class="method">Person</span>() {
-        <span class="keyword">this</span>.name = <span class="string">"John Doe"</span>;
-        <span class="keyword">this</span>.age = 30;
+    <span class="keyword">public</span> <span class="method">Personne</span>(<span class="keyword">String</span> cin, <span class="keyword">String</span> n, <span class="keyword">String</span> pn, <span class="keyword">Adresse</span> adr) {
+        <span class="keyword">this</span>.cin = cin;
+        <span class="keyword">this</span>.nom = n;
+        <span class="keyword">this</span>.prenom = pn;
+        <span class="keyword">this</span>.adresse = adr;
     }
 
-    <span class="comment">// Parameterized constructor</span>
-    <span class="keyword">public</span> <span class="method">Person</span>(String name, <span class="keyword">int</span> age) {
-        <span class="keyword">this</span>.name = name;
-        <span class="keyword">this</span>.age = age;
-    }
-
-    <span class="keyword">public void</span> <span class="method">displayInfo</span>() {
-        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"Name: "</span> + name + <span class="string">", Age: "</span> + age);
-    }
-}
-
-<span class="keyword">public class</span> <span class="method">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
-        Person person1 = <span class="keyword">new</span> <span class="method">Person</span>();
-        Person person2 = <span class="keyword">new</span> <span class="method">Person</span>(<span class="string">"Alice"</span>, 25);
-
-        person1.<span class="method">displayInfo</span>();
-        person2.<span class="method">displayInfo</span>();
+    <span class="keyword">public</span> <span class="method">Personne</span>(<span class="keyword">String</span> cin, <span class="keyword">String</span> n, <span class="keyword">String</span> pn, <span class="keyword">String</span> g, <span class="keyword">int</span> cp) {
+        <span class="keyword">this</span>.cin = cin;
+        <span class="keyword">this</span>.nom = n;
+        <span class="keyword">this</span>.prenom = pn;
+        <span class="keyword">this</span>.adresse = <span class="method">new</span> <span class="method">Adresse</span>(g, cp);
     }
 }</code></pre>
         </div>
@@ -156,18 +146,42 @@
       </p>
       <div id="static-methods" class="code-example">
         <div class="code-block">
-          <pre><code><span class="keyword">public class</span> <span class="method">MathUtils</span> {
-    <span class="keyword">public static final double</span> PI = 3.14159;
+          <pre><code><span class="keyword">import</span> <span class="method">java.util.ArrayList</span>;
+<span class="keyword">import</span> <span class="method">java.util.Scanner</span>;
+<span class="keyword">public class</span> <span class="method">act1_4</span> {
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Integer</span>&gt; ID = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Reference = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Nom = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Double</span>&gt; Prix = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> Scanner scanner = <span class="method">new</span> <span class="method">Scanner</span>(System.in);
 
-    <span class="keyword">public static int</span> <span class="method">square</span>(<span class="keyword">int</span> num) {
-        <span class="keyword">return</span> num * num;
+    <span class="keyword">static String</span> <span class="method">genererReference</span>(<span class="keyword">String</span> nNom, <span class="keyword">Integer</span> nID) {
+        <span class="keyword">String</span> nReference = <span class="string">""</span>;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; nNom.length(); i += 5) {
+            <span class="keyword">if</span> (nNom.charAt(i) != <span class="string">' '</span>) {
+                nReference += nNom.charAt(i);
+            }
+        }
+        nReference += nID;
+        <span class="keyword">return</span> nReference;
     }
-}
 
-<span class="keyword">public class</span> <span class="method">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
-        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"PI: "</span> + MathUtils.PI);
-        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"Square of 5: "</span> + MathUtils.<span class="method">square</span>(5));
+    <span class="keyword">static void</span> <span class="method">ajouterArticle</span>(<span class="keyword">String</span> nNom, <span class="keyword">double</span> nPrix) {
+        <span class="keyword">int</span> nID = ID.size();
+        <span class="keyword">String</span> nReference = genererReference(nNom, nID);
+        ID.add(nID);
+        Reference.add(nReference);
+        Nom.add(nNom);
+        Prix.add(nPrix);
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span>[] args) {
+        <span class="keyword">System.out.println</span>(<span class="string">"Ajouter un article"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le nom"</span>);
+        <span class="keyword">String</span> nNom = scanner.nextLine();
+        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le prix"</span>);
+        <span class="keyword">double</span> nPrix = scanner.nextDouble();
+        ajouterArticle(nNom, nPrix);
     }
 }</code></pre>
         </div>

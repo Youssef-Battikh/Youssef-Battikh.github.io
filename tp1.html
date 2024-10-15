@@ -23,8 +23,8 @@
  }</code></pre>
         </div>
         <div class="result-block">
-          <p><strong>Execution Result:</strong></p>
-          <p>Soyez les bienvenus !!</p>
+          <p><strong>Activity's brief explanation:</strong></p>
+          <p>Prints out "Soyez les bienvenus !!".</p>
         </div>
       </div>
 
@@ -56,21 +56,8 @@
 }</code></pre>
         </div>
         <div class="result-block">
-          <p><strong>Execution Result:</strong></p>
-          <p>
-            — 0 : Gérant
-            <br />
-            — 1 : Client
-            <br /><span class="comment1">if the user has typed 0 :</span>
-            <br />
-            — 0 : Ajouter un article
-            <br />
-            — 1 : Modifier un article
-            <br />
-            — 2 : Consulter les articles
-            <br />
-            — 3 : Supprimer un article
-          </p>
+          <p><strong>Activity's brief explanation:</strong></p>
+          <p>Simple Switch control flow statement.</p>
         </div>
       </div>
 
@@ -111,9 +98,9 @@
 }</code></pre>
         </div>
         <div class="result-block">
-          <p><strong>Execution Result:</strong></p>
+          <p><strong>Activity's brief explanation:</strong></p>
           <p>
-            <span class="comment1">empty output </span>
+            <span>Declaration and insertion of Array Lists.</span>
           </p>
         </div>
       </div>
@@ -188,27 +175,587 @@
 }</code></pre>
         </div>
         <div class="result-block">
-          <p><strong>Execution Result:</strong></p>
+          <p><strong>Activity's brief explanation:</strong></p>
           <p>
-            <br />
-            — 0 : Ajouter un article
-            <br />
-            — 1 : Modifier un article
-            <br />
-            — 2 : Consulter les articles
-            <br />
-            — 3 : Supprimer un article
-            <br />
-            <span class="comment1">if the user has typed 0 :</span>
-            <br />
-            Saisir le nom
-            <br />
-            <span class="comment1">*User input*</span>
-            <br />
-            Saisir le Prix
-            <br>
-            <span class="comment1">*User input*</span>
+            Insertion of a new element in the Array Lists through the input of
+            the user.
           </p>
+        </div>
+      </div>
+
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.5: Modifier un article</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">import</span> <span class="method">java.util.ArrayList</span>;
+<span class="keyword">import</span> <span class="method">java.util.Scanner</span>;
+
+<span class="keyword">public class</span> <span class="method">act1_5</span> {
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Integer</span>&gt; ID = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Reference = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Nom = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Double</span>&gt; Prix = <span class="method">new</span> ArrayList&lt;&gt;();
+    
+    <span class="keyword">static void</span> <span class="method">modifierArticle</span>(<span class="keyword">String</span> nRef, <span class="keyword">double</span> nPrix) {
+        <span class="keyword">int</span> i = <span class="number">0</span>;
+        <span class="keyword">while</span> (i &lt; Reference.size() &amp;&amp; !nRef.equals(Reference.get(i))) {
+            i++;
+        }
+        <span class="keyword">if</span> (i &lt; Reference.size()) {
+            Prix.set(i, nPrix);    
+        } <span class="keyword">else</span> {
+            <span class="keyword">System.out.println</span>(<span class="string">"Imposible de trouver cette Reference"</span>);
+        }
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span>[] args) {
+        <span class="method">Scanner</span> scanner = <span class="method">new</span> <span class="method">Scanner</span>(System.in);
+        ID.add(<span class="number">0</span>);
+        ID.add(<span class="number">1</span>);
+        ID.add(<span class="number">2</span>);
+        ID.add(<span class="number">3</span>);
+        ID.add(<span class="number">4</span>);
+        Reference.add(<span class="string">"Prelt50"</span>);
+        Reference.add(<span class="string">"EeB21"</span>);
+        Reference.add(<span class="string">"SpNo2"</span>);
+        Reference.add(<span class="string">"Mu8a3"</span>);
+        Reference.add(<span class="string">"SpA4"</span>);
+        Nom.add(<span class="string">"PC Portable Dell Vostro 3500"</span>);
+        Nom.add(<span class="string">"Écouteur JBL T125BT"</span>);
+        Nom.add(<span class="string">"Smartphone INFINIX Hot 10"</span>);
+        Nom.add(<span class="string">"Micro Casque 588 Filaire"</span>);
+        Nom.add(<span class="string">"Smartphone NOKIA C1"</span>);
+        Prix.add(<span class="number">1999.000</span>);
+        Prix.add(<span class="number">129.000</span>);
+        Prix.add(<span class="number">439.000</span>);
+        Prix.add(<span class="number">9.900</span>);
+        Prix.add(<span class="number">185.000</span>);
+        
+        <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Gérant"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Client"</span>);
+        <span class="keyword">int</span> x = scanner.nextInt();
+        scanner.nextLine();
+        <span class="keyword">switch</span>(x) {
+        <span class="keyword">case</span> <span class="number">0</span>:
+            <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Ajouter un article"</span>);
+            <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Modifier un article"</span>);
+            <span class="keyword">System.out.println</span>(<span class="string">"— 2 : Consulter les articles"</span>);
+            <span class="keyword">System.out.println</span>(<span class="string">"— 3 : Supprimer un article"</span>);
+            <span class="keyword">int</span> y = scanner.nextInt();
+            scanner.nextLine();
+            <span class="keyword">switch</span>(y) {
+            <span class="keyword">case</span> <span class="number">1</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Saisir la reference"</span>);
+                <span class="keyword">String</span> nRef = scanner.nextLine();
+                <span class="keyword">System.out.println</span>(<span class="string">"Saisir le noveau prix"</span>);
+                <span class="keyword">double</span> nPrix1 = scanner.nextDouble();
+                modifierArticle(nRef, nPrix1);
+                <span class="keyword">break</span>;
+            }
+        <span class="keyword">case</span> <span class="number">1</span>:
+            <span class="keyword">System.out.println</span>(<span class="string">"Bonjour cher/chère client(e)"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">default</span>:
+            <span class="keyword">System.out.println</span>(<span class="string">"Cette action n’est pas autorisée"</span>);
+            <span class="keyword">break</span>;
+        }
+    }
+}</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Activity's brief explanation:</strong></p>
+          <p>
+            Creation of a method that allows the user to modify an element's
+            "price" by inputting it's "reference".
+          </p>
+        </div>
+      </div>
+
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.6: Consulter les articles</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">import</span> <span class="method">java.util.ArrayList</span>;
+<span class="keyword">import</span> <span class="method">java.util.Scanner</span>;
+
+<span class="keyword">public class</span> <span class="method">act1_6</span> {
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Integer</span>&gt; ID = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Reference = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Nom = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Double</span>&gt; Prix = <span class="method">new</span> ArrayList&lt;&gt;();
+
+    <span class="keyword">static void</span> <span class="method">affichageCroissant</span>() {
+        <span class="keyword">int</span>[] tID = <span class="keyword">new</span> <span class="keyword">int</span>[ID.size()];
+        <span class="keyword">String</span>[] tReference = <span class="keyword">new</span> <span class="keyword">String</span>[Reference.size()];
+        <span class="keyword">String</span>[] tNom = <span class="keyword">new</span> <span class="keyword">String</span>[Nom.size()];
+        <span class="keyword">double</span>[] tPrix = <span class="keyword">new</span> <span class="keyword">double</span>[Prix.size()];
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ID.size(); i++) {
+            tID[i] = ID.get(i);
+            tReference[i] = Reference.get(i);
+            tNom[i] = Nom.get(i);
+            tPrix[i] = Prix.get(i);
+        }
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length - <span class="number">1</span>; i++) {
+            <span class="keyword">int</span> min = i;
+            <span class="keyword">int</span> auxI = tID[i];
+            <span class="keyword">String</span> auxR = tReference[i];
+            <span class="keyword">String</span> auxN = tNom[i];
+            <span class="keyword">double</span> auxP = tPrix[i];
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; tID.length; j++) {
+                <span class="keyword">if</span> (tPrix[j] &lt; auxP) {
+                    min = j;
+                    auxI = tID[j];
+                    auxR = tReference[j];
+                    auxN = tNom[j];
+                    auxP = tPrix[j];
+                }
+            }
+            tID[min] = tID[i];
+            tReference[min] = tReference[i];
+            tNom[min] = tNom[i];
+            tPrix[min] = tPrix[i];
+            tID[i] = auxI;
+            tReference[i] = auxR;
+            tNom[i] = auxN;
+            tPrix[i] = auxP;
+        }
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length; i++) {
+            <span class="keyword">System.out.println</span>(<span class="string">"ID="</span> + tID[i] + <span class="string">" Ref="</span> + tReference[i] + <span class="string">" Nom="</span> + tNom[i] + <span class="string">" Prix="</span> + tPrix[i]);
+        }
+    }
+
+    <span class="keyword">static void</span> <span class="method">affichageDecroissant</span>() {
+        <span class="keyword">int</span>[] tID = <span class="keyword">new</span> <span class="keyword">int</span>[ID.size()];
+        <span class="keyword">String</span>[] tReference = <span class="keyword">new</span> <span class="keyword">String</span>[Reference.size()];
+        <span class="keyword">String</span>[] tNom = <span class="keyword">new</span> <span class="keyword">String</span>[Nom.size()];
+        <span class="keyword">double</span>[] tPrix = <span class="keyword">new</span> <span class="keyword">double</span>[Prix.size()];
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ID.size(); i++) {
+            tID[i] = ID.get(i);
+            tReference[i] = Reference.get(i);
+            tNom[i] = Nom.get(i);
+            tPrix[i] = Prix.get(i);
+        }
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length - <span class="number">1</span>; i++) {
+            <span class="keyword">int</span> max = i;
+            <span class="keyword">int</span> auxI = tID[i];
+            <span class="keyword">String</span> auxR = tReference[i];
+            <span class="keyword">String</span> auxN = tNom[i];
+            <span class="keyword">double</span> auxP = tPrix[i];
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; tID.length; j++) {
+                <span class="keyword">if</span> (tPrix[j] &gt; auxP) {
+                    max = j;
+                    auxI = tID[j];
+                    auxR = tReference[j];
+                    auxN = tNom[j];
+                    auxP = tPrix[j];
+                }
+            }
+            <span class="keyword">if</span>(max != i) {
+                tID[max] = tID[i];
+                tReference[max] = tReference[i];
+                tNom[max] = tNom[i];
+                tPrix[max] = tPrix[i];
+            
+                tID[i] = auxI;
+                tReference[i] = auxR;
+                tNom[i] = auxN;
+                tPrix[i] = auxP;
+            }
+        }
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length; i++) {
+            <span class="keyword">System.out.println</span>(<span class="string">"ID="</span> + tID[i] + <span class="string">" Ref="</span> + tReference[i] + <span class="string">" Nom="</span> + tNom[i] + <span class="string">" Prix="</span> + tPrix[i]);
+        }
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span>[] args) {
+        <span class="method">Scanner</span> scanner = <span class="method">new</span> <span class="method">Scanner</span>(System.in);    
+        ID.add(<span class="number">0</span>);
+        ID.add(<span class="number">1</span>);
+        ID.add(<span class="number">2</span>);
+        ID.add(<span class="number">3</span>);
+        ID.add(<span class="number">4</span>);
+        Reference.add(<span class="string">"Prelt50"</span>);
+        Reference.add(<span class="string">"EeB21"</span>);
+        Reference.add(<span class="string">"SpNo2"</span>);
+        Reference.add(<span class="string">"Mu8a3"</span>);
+        Reference.add(<span class="string">"SpA4"</span>);
+        Nom.add(<span class="string">"PC Portable Dell Vostro 3500"</span>);
+        Nom.add(<span class="string">"Écouteur JBL T125BT"</span>);
+        Nom.add(<span class="string">"Smartphone INFINIX Hot 10"</span>);
+        Nom.add(<span class="string">"Micro Casque 588 Filaire"</span>);
+        Nom.add(<span class="string">"Smartphone NOKIA C1"</span>);
+        Prix.add(<span class="number">1999.000</span>);
+        Prix.add(<span class="number">129.000</span>);
+        Prix.add(<span class="number">439.000</span>);
+        Prix.add(<span class="number">9.900</span>);
+        Prix.add(<span class="number">185.000</span>);
+
+        <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Gérant"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Client"</span>);
+        <span class="keyword">int</span> x = scanner.nextInt();
+        scanner.nextLine();
+        <span class="keyword">switch</span>(x) {
+            <span class="keyword">case</span> <span class="number">0</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Ajouter un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Modifier un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 2 : Consulter les articles"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 3 : Supprimer un article"</span>);
+                <span class="keyword">int</span> y = scanner.nextInt();
+                scanner.nextLine();
+                <span class="keyword">switch</span>(y) {
+                    <span class="keyword">case</span> <span class="number">2</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Affichage par order croissant"</span>);
+                        <span class="method">affichageCroissant</span>();
+                        <span class="keyword">System.out.println</span>(<span class="string">"Affichage par order decroissant"</span>);
+                        <span class="method">affichageDecroissant</span>();
+                        <span class="keyword">break</span>;
+                }
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="number">1</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Bonjour cher/chère client(e)"</span>);
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Cette action n’est pas autorisée"</span>);
+                <span class="keyword">break</span>;
+        }
+    }
+}</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Activity's brief explanation:</strong></p>
+          <p>
+            Creation of a method that sorts and outputs the elements of the
+            Array lists in ascending and descending orders based on the values
+            of the "Prix" Array list by creating new Arrays, inserting and
+            sorting the values inside them.
+          </p>
+        </div>
+      </div>
+
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.7:Supprimer un article</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">import</span> <span class="method">java.util.ArrayList</span>;
+<span class="keyword">import</span> <span class="method">java.util.Scanner</span>;
+
+<span class="keyword">public class</span> <span class="method">act1_7</span> {
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Integer</span>&gt; ID = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Reference = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Nom = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Double</span>&gt; Prix = <span class="method">new</span> ArrayList&lt;&gt;();
+
+    <span class="keyword">static void</span> <span class="method">supprimerArticale</span>(<span class="keyword">String</span> nRef) {
+        <span class="keyword">int</span> i = <span class="number">0</span>;
+        <span class="keyword">while</span> (i &lt; Reference.size() &amp;&amp; !nRef.equals(Reference.get(i))) {
+            i++;
+        }
+        <span class="keyword">if</span> (i &lt; Reference.size()) {
+            ID.remove(i);
+            Reference.remove(i);
+            Nom.remove(i);
+            Prix.remove(i);
+            <span class="keyword">System.out.println</span>(<span class="string">"L'article avec la référence "</span> + nRef + <span class="string">" a été supprimé."</span>);
+        } <span class="keyword">else</span> {
+            <span class="keyword">System.out.println</span>(<span class="string">"Impossible de trouver cette référence."</span>);
+        }
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span>[] args) {
+        <span class="method">Scanner</span> scanner = <span class="method">new</span> <span class="method">Scanner</span>(System.in);
+        ID.add(<span class="number">0</span>);
+        ID.add(<span class="number">1</span>);
+        ID.add(<span class="number">2</span>);
+        ID.add(<span class="number">3</span>);
+        ID.add(<span class="number">4</span>);
+        Reference.add(<span class="string">"Prelt50"</span>);
+        Reference.add(<span class="string">"EeB21"</span>);
+        Reference.add(<span class="string">"SpNo2"</span>);
+        Reference.add(<span class="string">"Mu8a3"</span>);
+        Reference.add(<span class="string">"SpA4"</span>);
+        Nom.add(<span class="string">"PC Portable Dell Vostro 3500"</span>);
+        Nom.add(<span class="string">"Écouteur JBL T125BT"</span>);
+        Nom.add(<span class="string">"Smartphone INFINIX Hot 10"</span>);
+        Nom.add(<span class="string">"Micro Casque 588 Filaire"</span>);
+        Nom.add(<span class="string">"Smartphone NOKIA C1"</span>);
+        Prix.add(<span class="number">1999.000</span>);
+        Prix.add(<span class="number">129.000</span>);
+        Prix.add(<span class="number">439.000</span>);
+        Prix.add(<span class="number">9.900</span>);
+        Prix.add(<span class="number">185.000</span>);
+
+        <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Gérant"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Client"</span>);
+        <span class="keyword">int</span> x = scanner.nextInt();
+        scanner.nextLine();
+        <span class="keyword">switch</span>(x) {
+            <span class="keyword">case</span> <span class="number">0</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Ajouter un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Modifier un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 2 : Consulter les articles"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 3 : Supprimer un article"</span>);
+                <span class="keyword">int</span> y = scanner.nextInt();
+                scanner.nextLine();
+                <span class="keyword">switch</span>(y) {
+                    <span class="keyword">case</span> <span class="number">3</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir la référence à supprimer :"</span>);
+                        <span class="keyword">String</span> nRef1 = scanner.nextLine();
+                        <span class="method">supprimerArticale</span>(nRef1);
+                        <span class="keyword">break</span>;
+                    <span class="keyword">default</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Option non prise en charge."</span>);
+                        <span class="keyword">break</span>;
+                }
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="number">1</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Bonjour cher/chère client(e)"</span>);
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Cette action n’est pas autorisée."</span>);
+                <span class="keyword">break</span>;
+        }
+    }
+}</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Activity's brief explanation:</strong></p>
+          <p>
+            Removal of an element in each of the Array Lists chosen from the
+            user by inputting the "reference" listed in the "Reference" array
+            list.
+          </p>
+        </div>
+      </div>
+
+      <div id="tp01" class="project-showcase">
+        <h3>Activity 1.8: Passons à l’action ! !</h3>
+        <div class="code-block">
+          <pre><code><span class="keyword">import</span> <span class="method">java.util.ArrayList</span>;
+<span class="keyword">import</span> <span class="method">java.util.Scanner</span>;
+
+<span class="keyword">public class</span> <span class="method">act1_8</span> {
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Integer</span>&gt; ID = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Reference = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">String</span>&gt; Nom = <span class="method">new</span> ArrayList&lt;&gt;();
+    <span class="keyword">static</span> ArrayList&lt;<span class="keyword">Double</span>&gt; Prix = <span class="method">new</span> ArrayList&lt;&gt;();
+
+    <span class="keyword">static void</span> <span class="method">supprimerArticale</span>(<span class="keyword">String</span> nRef) {
+        <span class="keyword">int</span> i = <span class="number">0</span>;
+        <span class="keyword">while</span> (i &lt; Reference.size() &amp;&amp; !nRef.equals(Reference.get(i))) {
+            i++;
+        }
+        <span class="keyword">if</span> (i &lt; Reference.size()) {
+            ID.remove(i);
+            Reference.remove(i);
+            Nom.remove(i);
+            Prix.remove(i);
+            <span class="keyword">System.out.println</span>(<span class="string">"L'article avec la référence "</span> + nRef + <span class="string">" a été supprimé."</span>);
+        } <span class="keyword">else</span> {
+            <span class="keyword">System.out.println</span>(<span class="string">"Impossible de trouver cette référence."</span>);
+        }
+    }
+
+    <span class="keyword">static void</span> <span class="method">affichageCroissant</span>() {
+        <span class="keyword">int</span>[] tID = <span class="method">new</span> <span class="keyword">int</span>[ID.size()];
+        <span class="keyword">String</span>[] tReference = <span class="method">new</span> <span class="keyword">String</span>[Reference.size()];
+        <span class="keyword">String</span>[] tNom = <span class="method">new</span> <span class="keyword">String</span>[Nom.size()];
+        <span class="keyword">double</span>[] tPrix = <span class="method">new</span> <span class="keyword">double</span>[Prix.size()];
+        
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ID.size(); i++){
+            tID[i] = ID.get(i);
+            tReference[i] = Reference.get(i);
+            tNom[i] = Nom.get(i);
+            tPrix[i] = Prix.get(i);
+        }
+        
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length - <span class="number">1</span>; i++) {
+            <span class="keyword">int</span> min = i;
+            <span class="keyword">int</span> auxI = tID[i];
+            <span class="keyword">String</span> auxR = tReference[i];
+            <span class="keyword">String</span> auxN = tNom[i];
+            <span class="keyword">double</span> auxP = tPrix[i];
+            
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; tID.length; j++) {
+                <span class="keyword">if</span> (tPrix[j] &lt; auxP) {
+                    min = j;
+                    auxI = tID[j];
+                    auxR = tReference[j];
+                    auxN = tNom[j];
+                    auxP = tPrix[j];
+                }
+            }
+            tID[min] = tID[i];
+            tReference[min] = tReference[i];
+            tNom[min] = tNom[i];
+            tPrix[min] = tPrix[i];
+            tID[i] = auxI;
+            tReference[i] = auxR;
+            tNom[i] = auxN;
+            tPrix[i] = auxP;
+        }
+        
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length; i++){
+            <span class="keyword">System.out.println</span>(<span class="string">"ID="</span> + tID[i] + <span class="string">" Ref="</span> + tReference[i] + <span class="string">" Nom="</span> + tNom[i] + <span class="string">" Prix="</span> + tPrix[i]);
+        }
+    }
+
+    <span class="keyword">static void</span> <span class="method">affichageDecroissant</span>() {
+        <span class="keyword">int</span>[] tID = <span class="method">new</span> <span class="keyword">int</span>[ID.size()];
+        <span class="keyword">String</span>[] tReference = <span class="method">new</span> <span class="keyword">String</span>[Reference.size()];
+        <span class="keyword">String</span>[] tNom = <span class="method">new</span> <span class="keyword">String</span>[Nom.size()];
+        <span class="keyword">double</span>[] tPrix = <span class="method">new</span> <span class="keyword">double</span>[Prix.size()];
+        
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ID.size(); i++){
+            tID[i] = ID.get(i);
+            tReference[i] = Reference.get(i);
+            tNom[i] = Nom.get(i);
+            tPrix[i] = Prix.get(i);
+        }
+        
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length - <span class="number">1</span>; i++) {
+            <span class="keyword">int</span> max = i;
+            <span class="keyword">int</span> auxI = tID[i];
+            <span class="keyword">String</span> auxR = tReference[i];
+            <span class="keyword">String</span> auxN = tNom[i];
+            <span class="keyword">double</span> auxP = tPrix[i];
+            
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; tID.length; j++) {
+                <span class="keyword">if</span> (tPrix[j] &gt; auxP) {
+                    max = j;
+                    auxI = tID[j];
+                    auxR = tReference[j];
+                    auxN = tNom[j];
+                    auxP = tPrix[j];
+                }
+            }
+            tID[max] = tID[i];
+            tReference[max] = tReference[i];
+            tNom[max] = tNom[i];
+            tPrix[max] = tPrix[i];
+            tID[i] = auxI;
+            tReference[i] = auxR;
+            tNom[i] = auxN;
+            tPrix[i] = auxP;
+        }
+        
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tID.length; i++){
+            <span class="keyword">System.out.println</span>(<span class="string">"ID="</span> + tID[i] + <span class="string">" Ref="</span> + tReference[i] + <span class="string">" Nom="</span> + tNom[i] + <span class="string">" Prix="</span> + tPrix[i]);
+        }
+    }
+
+    <span class="keyword">static void</span> <span class="method">modifierArticle</span>(<span class="keyword">String</span> nRef, <span class="keyword">double</span> nPrix) {
+        <span class="keyword">int</span> i = <span class="number">0</span>;
+        <span class="keyword">while</span> (i &lt; Reference.size() &amp;&amp; !nRef.equals(Reference.get(i))) {
+            i++;
+        }
+        <span class="keyword">if</span> (i &lt; Reference.size()) {
+            Prix.set(i, nPrix);
+        } <span class="keyword">else</span> {
+            <span class="keyword">System.out.println</span>(<span class="string">"Impossible de trouver cette référence"</span>);
+        }
+    }
+
+    <span class="keyword">static String</span> <span class="method">genererReference</span>(<span class="keyword">String</span> nNom, <span class="keyword">Integer</span> nID) {
+        <span class="keyword">String</span> nReference = <span class="string">""</span>;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nNom.length(); i += <span class="number">5</span>) {
+            <span class="keyword">if</span> (nNom.charAt(i) != <span class="string">' '</span>) {
+                nReference = nReference + nNom.charAt(i);
+            }
+        }
+        nReference = nReference + nID;
+        <span class="keyword">return</span> nReference;
+    }
+
+    <span class="keyword">static void</span> <span class="method">ajouterArticle</span>(<span class="keyword">String</span> nNom, <span class="keyword">double</span> nPrix) {
+        <span class="keyword">int</span> nID = ID.size();
+        <span class="keyword">String</span> nReference = genererReference(nNom, nID);
+        ID.add(nID);
+        Reference.add(nReference);
+        Nom.add(nNom);
+        Prix.add(nPrix);
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span>[] args) {
+        <span class="method">Scanner scanner</span> = <span class="method">new</span> Scanner(<span class="method">System.in</span>);
+
+        ID.add(<span class="number">0</span>);
+        ID.add(<span class="number">1</span>);
+        ID.add(<span class="number">2</span>);
+        ID.add(<span class="number">3</span>);
+        ID.add(<span class="number">4</span>);
+
+        Reference.add(<span class="string">"Prelt50"</span>);
+        Reference.add(<span class="string">"EeB21"</span>);
+        Reference.add(<span class="string">"SpNo2"</span>);
+        Reference.add(<span class="string">"Mu8a3"</span>);
+        Reference.add(<span class="string">"SpA4"</span>);
+
+        Nom.add(<span class="string">"PC Portable Dell Vostro 3500"</span>);
+        Nom.add(<span class="string">"Écouteur JBL T125BT"</span>);
+        Nom.add(<span class="string">"Smartphone INFINIX Hot 10"</span>);
+        Nom.add(<span class="string">"Micro Casque 588 Filaire"</span>);
+        Nom.add(<span class="string">"Smartphone NOKIA C1"</span>);
+
+        Prix.add(<span class="number">1999.000</span>);
+        Prix.add(<span class="number">129.000</span>);
+        Prix.add(<span class="number">439.000</span>);
+        Prix.add(<span class="number">9.900</span>);
+        Prix.add(<span class="number">185.000</span>);
+
+        <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Gérant"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Client"</span>);
+
+        <span class="keyword">int</span> x = scanner.nextInt();
+        scanner.nextLine();
+
+        <span class="keyword">switch</span> (x) {
+            <span class="keyword">case</span> <span class="number">0</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"— 0 : Ajouter un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 1 : Modifier un article"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 2 : Consulter les articles"</span>);
+                <span class="keyword">System.out.println</span>(<span class="string">"— 3 : Supprimer un article"</span>);
+
+                <span class="keyword">int</span> y = scanner.nextInt();
+                scanner.nextLine();
+
+                <span class="keyword">switch</span> (y) {
+                    <span class="keyword">case</span> <span class="number">0</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le nom"</span>);
+                        <span class="keyword">String</span> nNom = scanner.nextLine();
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le prix"</span>);
+                        <span class="keyword">double</span> nPrix = scanner.nextDouble();
+                        ajouterArticle(nNom, nPrix);
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="number">1</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir la référence"</span>);
+                        <span class="keyword">String</span> nRef = scanner.nextLine();
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir le nouveau prix"</span>);
+                        <span class="keyword">double</span> nPrix1 = scanner.nextDouble();
+                        modifierArticle(nRef, nPrix1);
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="number">2</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Affichage par ordre croissant"</span>);
+                        affichageCroissant();
+                        <span class="keyword">System.out.println</span>(<span class="string">"Affichage par ordre décroissant"</span>);
+                        affichageDecroissant();
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="number">3</span>:
+                        <span class="keyword">System.out.println</span>(<span class="string">"Saisir la référence"</span>);
+                        <span class="keyword">String</span> nRef1 = scanner.nextLine();
+                        supprimerArticale(nRef1);
+                        <span class="keyword">break</span>;
+                }
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="number">1</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Bonjour cher/chère client(e)"</span>);
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                <span class="keyword">System.out.println</span>(<span class="string">"Cette action n’est pas autorisée"</span>);
+                <span class="keyword">break</span>;
+        }
+    }
+}</code></pre>
+        </div>
+        <div class="result-block">
+          <p><strong>Activity's brief explanation:</strong></p>
+          <p>Combining all of the activities into one single activity.</p>
         </div>
       </div>
 
