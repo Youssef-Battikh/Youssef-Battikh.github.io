@@ -28,24 +28,21 @@
       </p>
       <div id="classes-objects" class="code-example">
         <div class="code-block">
-          <pre><code><span class="keyword">public class</span> <span class="method">Car</span> {
-    <span class="keyword">private</span> String model;
-    <span class="keyword">private</span> <span class="keyword">int</span> year;
+          <pre><code><span class="keyword">class</span> <span class="method">Adresse</span> {
+    <span class="keyword">String</span> Gouvernorat;
+    <span class="keyword">int</span> codePostal;
 
-    <span class="keyword">public</span> <span class="method">Car</span>(String model, <span class="keyword">int</span> year) {
-        <span class="keyword">this</span>.model = model;
-        <span class="keyword">this</span>.year = year;
+    <span class="keyword">public</span> <span class="method">Adresse</span>(<span class="keyword">String</span> G, <span class="keyword">int</span> cP) {
+        <span class="keyword">this</span>.Gouvernorat = G;
+        <span class="keyword">this</span>.codePostal = cP;
     }
 
-    <span class="keyword">public void</span> <span class="method">displayInfo</span>() {
-        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"Car Model: "</span> + model + <span class="string">", Year: "</span> + year);
+    <span class="keyword">public String</span> <span class="method">getGouvernorat</span>() {
+        <span class="keyword">return this</span>.Gouvernorat;
     }
-}
 
-<span class="keyword">public class</span> <span class="method">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
-        Car myCar = <span class="keyword">new</span> <span class="method">Car</span>(<span class="string">"Toyota Camry"</span>, 2022);
-        myCar.<span class="method">displayInfo</span>();
+    <span class="keyword">public int</span> <span class="method">getCodePostal</span>() {
+        <span class="keyword">return this</span>.codePostal;
     }
 }</code></pre>
         </div>
@@ -57,27 +54,29 @@
       </p>
       <div id="encapsulation" class="code-example">
         <div class="code-block">
-          <pre><code><span class="keyword">public class</span> <span class="method">BankAccount</span> {
-    <span class="keyword">private</span> <span class="keyword">double</span> balance;
+          <pre><code><span class="keyword">class</span> <span class="method">Adresse</span> {
+    <span class="keyword">private String</span> Gouvernorat;
+    <span class="keyword">private int</span> codePostal;
 
-    <span class="keyword">public</span> <span class="method">BankAccount</span>(<span class="keyword">double</span> initialBalance) {
-        <span class="keyword">this</span>.balance = initialBalance;
+    <span class="keyword">public</span> <span class="method">Adresse</span>(<span class="keyword">String</span> G, <span class="keyword">int</span> cP) {
+        <span class="keyword">this</span>.Gouvernorat = G;
+        <span class="keyword">this</span>.codePostal = cP;
     }
 
-    <span class="keyword">public void</span> <span class="method">deposit</span>(<span class="keyword">double</span> amount) {
-        <span class="keyword">if</span> (amount > 0) {
-            balance += amount;
-        }
+    <span class="keyword">public String</span> <span class="method">getGouvernorat</span>() {
+        <span class="keyword">return this</span>.Gouvernorat;
     }
 
-    <span class="keyword">public void</span> <span class="method">withdraw</span>(<span class="keyword">double</span> amount) {
-        <span class="keyword">if</span> (amount > 0 && balance >= amount) {
-            balance -= amount;
-        }
+    <span class="keyword">public int</span> <span class="method">getCodePostal</span>() {
+        <span class="keyword">return this</span>.codePostal;
     }
 
-    <span class="keyword">public double</span> <span class="method">getBalance</span>() {
-        <span class="keyword">return</span> balance;
+    <span class="keyword">public void</span> <span class="method">setGouvernorat</span>(<span class="keyword">String</span> nG) {
+        <span class="keyword">this</span>.Gouvernorat = nG;
+    }
+
+    <span class="keyword">public void</span> <span class="method">setCodePostal</span>(<span class="keyword">int</span> nCP) {
+        <span class="keyword">this</span>.codePostal = nCP;
     }
 }</code></pre>
         </div>

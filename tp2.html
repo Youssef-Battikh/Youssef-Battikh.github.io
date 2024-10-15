@@ -14,20 +14,120 @@
     <main>
       <div id="tp02" class="project-showcase">
         <h3>
-          
+          Activity 2.0: La classe Adresse
         </h3>
         <div class="code-block">
-          <pre><code>
+          <pre><code><span class="keyword">class</span> <span class="method">Adresse</span> {
+    <span class="keyword">private String</span> Gouvernorat;
+    <span class="keyword">private int</span> codePostal;
 
-          </code></pre>
+    <span class="keyword">public</span> <span class="method">Adresse</span>(<span class="keyword">String</span> G, <span class="keyword">int</span> cP) {
+        <span class="keyword">this</span>.Gouvernorat = G;
+        <span class="keyword">this</span>.codePostal = cP;
+    }
+
+    <span class="keyword">public String</span> <span class="method">getGouvernorat</span>() {
+        <span class="keyword">return this</span>.Gouvernorat;
+    }
+
+    <span class="keyword">public int</span> <span class="method">getCodePostal</span>() {
+        <span class="keyword">return this</span>.codePostal;
+    }
+
+    <span class="keyword">public void</span> <span class="method">setGouvernorat</span>(<span class="keyword">String</span> nG) {
+        <span class="keyword">this</span>.Gouvernorat = nG;
+    }
+
+    <span class="keyword">public void</span> <span class="method">setCodePostal</span>(<span class="keyword">int</span> nCP) {
+        <span class="keyword">this</span>.codePostal = nCP;
+    }
+	
+	<span class="keyword">@Override</span>
+    <span class="keyword">public String</span> <span class="method">toString</span>() {
+        <span class="keyword">return</span> <span class="string">"Adresse[gouvernorat= "</span> + <span class="keyword">this</span>.Gouvernorat + <span class="string">", codePostal= "</span> + <span class="keyword">this</span>.codePostal + <span class="string">"];"</span>;
+    }
+}</code></pre>
         </div>
         <div class="result-block">
-          <p><strong>Execution Result:</strong></p>
+          <p><strong>Activity's brief explanation:</strong></p>
           <p>
-
+            This activity showcases how we can create a class with private attributes and public methods which also
+            contains a constructor and an overriding of the toString method
           </p>
         </div>
       </div>
+
+      <h3>
+        Activity 2.1: La classe Personne
+      </h3>
+      <div class="code-block">
+        <pre><code><span class="keyword">class</span> <span class="method">Personne</span> {
+    <span class="keyword">private String</span> cin;
+    <span class="keyword">private String</span> nom;
+    <span class="keyword">private String</span> prenom;
+    <span class="keyword">private Adresse</span> adresse;
+
+    <span class="keyword">public</span> <span class="method">Personne</span>(<span class="keyword">String</span> cin, <span class="keyword">String</span> n, <span class="keyword">String</span> pn, <span class="keyword">Adresse</span> adr) {
+        <span class="keyword">this</span>.cin = cin;
+        <span class="keyword">this</span>.nom = n;
+        <span class="keyword">this</span>.prenom = pn;
+        <span class="keyword">this</span>.adresse = adr;
+    }
+
+    <span class="keyword">public</span> <span class="method">Personne</span>(<span class="keyword">String</span> cin, <span class="keyword">String</span> n, <span class="keyword">String</span> pn, <span class="keyword">String</span> g, <span class="keyword">int</span> cp) {
+        <span class="keyword">this</span>.cin = cin;
+        <span class="keyword">this</span>.nom = n;
+        <span class="keyword">this</span>.prenom = pn;
+        <span class="keyword">this</span>.adresse = <span class="method">new</span> <span class="method">Adresse</span>(g, cp);
+    }
+
+    <span class="keyword">public void</span> <span class="method">setCin</span>(<span class="keyword">String</span> cin) {
+        <span class="keyword">this</span>.cin = cin;
+    }
+
+    <span class="keyword">public String</span> <span class="method">getCin</span>() {
+        <span class="keyword">return this</span>.cin;
+    }
+
+    <span class="keyword">public String</span> <span class="method">getNom</span>() {
+        <span class="keyword">return this</span>.nom;
+    }
+
+    <span class="keyword">public String</span> <span class="method">getPrenom</span>() {
+        <span class="keyword">return this</span>.prenom;
+    }
+
+    <span class="keyword">public Adresse</span> <span class="method">getAdresse</span>() {
+        <span class="keyword">return this</span>.adresse;
+    }
+
+    <span class="keyword">public void</span> <span class="method">setNom</span>(<span class="keyword">String</span> n) {
+        <span class="keyword">this</span>.nom = n;
+    }
+
+    <span class="keyword">public void</span> <span class="method">setPrenom</span>(<span class="keyword">String</span> pn) {
+        <span class="keyword">this</span>.prenom = pn;
+    }
+
+    <span class="keyword">public void</span> <span class="method">setAdresse</span>(<span class="keyword">Adresse</span> adr) {
+        <span class="keyword">this</span>.adresse = adr;
+    }
+
+    <span class="keyword">@Override</span>
+    <span class="keyword">public String</span> <span class="method">toString</span>() {
+        <span class="keyword">return</span> <span class="string">"cin= "</span> + this.cin + <span class="string">", nom= "</span> + this.nom + <span class="string">", prenom= "</span> + this.prenom + <span class="string">", Adresse[gouvernorat= "</span> + this.adresse.getGouvernorat() + <span class="string">", codePostal= "</span> + this.adresse.getCodePostal() + <span class="string">"];"</span>;
+    }
+}</code></pre>
+      </div>
+      <div class="result-block">
+        <p><strong>Activity's brief explanation:</strong></p>
+        <p>
+          This activity showcases how we can create a class with private attributes with one them being 
+          an object of an other class and public methods which also contains a constructor 
+          and an overriding of the toString method
+        </p>
+      </div>
+    </div>
       <a href="Index.html" class="cta-button">Back to Home page</a>
     </main>
   </body>
