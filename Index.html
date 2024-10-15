@@ -16,15 +16,25 @@
       <p>
         Object-Oriented Programming (OOP) is a programming paradigm that uses
         objects to design and organize code. Java is a popular language that
-        fully embraces OOP principles. This resume covers key concepts that
-        we have learnt in our university workshop so far.
+        fully embraces OOP principles. This resume covers key concepts that we
+        have learnt in our university workshop so far.
       </p>
 
       <h2>Key OOP Concepts</h2>
-      
-      <h3>Classes and Objects <button class="example-button" onclick="toggleExample('classes-objects')">Show Example</button></h3>
+
+      <h3>
+        Classes and Objects
+        <button
+          class="example-button"
+          onclick="toggleExample('classes-objects')"
+        >
+          Show Example
+        </button>
+      </h3>
       <p>
-        Classes are blueprints for creating objects. They define the structure and behavior of objects. Objects are instances of classes, representing real-world entities in code.
+        Classes are blueprints for creating objects. They define the structure
+        and behavior of objects. Objects are instances of classes, representing
+        real-world entities in code.
       </p>
       <div id="classes-objects" class="code-example">
         <div class="code-block">
@@ -48,9 +58,17 @@
         </div>
       </div>
 
-      <h3>Encapsulation <button class="example-button" onclick="toggleExample('encapsulation')">Show Example</button></h3>
+      <h3>
+        Encapsulation
+        <button class="example-button" onclick="toggleExample('encapsulation')">
+          Show Example
+        </button>
+      </h3>
       <p>
-        Encapsulation is the bundling of data and the methods that operate on that data within a single unit (class). It restricts direct access to some of an object's components, which is a means of preventing accidental interference and misuse of the methods and data.
+        Encapsulation is the bundling of data and the methods that operate on
+        that data within a single unit (class). It restricts direct access to
+        some of an object's components, which is a means of preventing
+        accidental interference and misuse of the methods and data.
       </p>
       <div id="encapsulation" class="code-example">
         <div class="code-block">
@@ -82,9 +100,16 @@
         </div>
       </div>
 
-      <h3>Constructors <button class="example-button" onclick="toggleExample('constructors')">Show Example</button></h3>
+      <h3>
+        Constructors
+        <button class="example-button" onclick="toggleExample('constructors')">
+          Show Example
+        </button>
+      </h3>
       <p>
-        Constructors are special methods used to initialize objects. They are called when an object of a class is created and can be used to set initial values for object attributes.
+        Constructors are special methods used to initialize objects. They are
+        called when an object of a class is created and can be used to set
+        initial values for object attributes.
       </p>
       <div id="constructors" class="code-example">
         <div class="code-block">
@@ -112,10 +137,20 @@
       </div>
 
       <h2>Java-Specific OOP Features</h2>
-      
-      <h3>Package System for Organizing Classes <button class="example-button" onclick="toggleExample('package-system')">Show Example</button></h3>
+
+      <h3>
+        Package System for Organizing Classes
+        <button
+          class="example-button"
+          onclick="toggleExample('package-system')"
+        >
+          Show Example
+        </button>
+      </h3>
       <p>
-        Java uses packages to organize classes and interfaces into namespaces. Packages help in avoiding naming conflicts and provide a way to control access to classes.
+        Java uses packages to organize classes and interfaces into namespaces.
+        Packages help in avoiding naming conflicts and provide a way to control
+        access to classes.
       </p>
       <div id="package-system" class="code-example">
         <div class="code-block">
@@ -140,9 +175,19 @@
         </div>
       </div>
 
-      <h3>Static Methods and Variables <button class="example-button" onclick="toggleExample('static-methods')">Show Example</button></h3>
+      <h3>
+        Static Methods and Variables
+        <button
+          class="example-button"
+          onclick="toggleExample('static-methods')"
+        >
+          Show Example
+        </button>
+      </h3>
       <p>
-        Static methods and variables belong to the class rather than any specific instance of the class. They can be accessed without creating an object of the class.
+        Static methods and variables belong to the class rather than any
+        specific instance of the class. They can be accessed without creating an
+        object of the class.
       </p>
       <div id="static-methods" class="code-example">
         <div class="code-block">
@@ -194,9 +239,9 @@
 
       <h2>Workshop Details</h2>
       <p>
-        Date: 13/10/2024<br />
         Duration: 3 hours<br />
-        Prerequisites: Basic Java knowledge
+        Goal: Basic Java knowledge<br />
+        Professor: Marwa Thabet
       </p>
     </main>
 
@@ -204,9 +249,13 @@
       function toggleExample(id) {
         var example = document.getElementById(id);
         var display = example.style.display;
-        example.style.display = display === 'none' || display === '' ? 'block' : 'none';
+        example.style.display =
+          display === "none" || display === "" ? "block" : "none";
         var button = event.target;
-        button.textContent = button.textContent === 'Show Example' ? 'Hide Example' : 'Show Example';
+        button.textContent =
+          button.textContent === "Show Example"
+            ? "Hide Example"
+            : "Show Example";
       }
     </script>
   </body>
