@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>Java Compte-rendu Blog</h1>
-      <p class="subtitle">Battikh Youssef</p>
+      <p class="subtitle">Battikh Youssef TP4</p>
     </header>
     <main>
       <div id="tp02" class="project-showcase">
@@ -17,7 +17,9 @@
           Activity 2.0: La classe Adresse
         </h3>
         <div class="code-block">
-          <pre><code><span class="keyword">class</span> <span class="method">Adresse</span> {
+          <pre><code><span class="keyword">package</span> <span class="method">tp2</span>;
+
+<span class="keyword">public class</span> <span class="method">Adresse</span> {
     <span class="keyword">private String</span> Gouvernorat;
     <span class="keyword">private int</span> codePostal;
 
@@ -27,11 +29,11 @@
     }
 
     <span class="keyword">public String</span> <span class="method">getGouvernorat</span>() {
-        <span class="keyword">return this</span>.Gouvernorat;
+        <span class="keyword">return</span> <span class="keyword">this</span>.Gouvernorat;
     }
 
     <span class="keyword">public int</span> <span class="method">getCodePostal</span>() {
-        <span class="keyword">return this</span>.codePostal;
+        <span class="keyword">return</span> <span class="keyword">this</span>.codePostal;
     }
 
     <span class="keyword">public void</span> <span class="method">setGouvernorat</span>(<span class="keyword">String</span> nG) {
@@ -41,8 +43,8 @@
     <span class="keyword">public void</span> <span class="method">setCodePostal</span>(<span class="keyword">int</span> nCP) {
         <span class="keyword">this</span>.codePostal = nCP;
     }
-	
-	<span class="keyword">@Override</span>
+
+    <span class="keyword">@Override</span>
     <span class="keyword">public String</span> <span class="method">toString</span>() {
         <span class="keyword">return</span> <span class="string">"Adresse[gouvernorat= "</span> + <span class="keyword">this</span>.Gouvernorat + <span class="string">", codePostal= "</span> + <span class="keyword">this</span>.codePostal + <span class="string">"];"</span>;
     }
@@ -52,7 +54,7 @@
           <p><strong>Activity's brief explanation:</strong></p>
           <p>
             This activity showcases how we can create a class with private attributes and public methods which also
-            contains a constructor and an overriding of the toString method
+            contains a constructor and an overriding of the toString method.
           </p>
         </div>
       </div>
@@ -61,13 +63,15 @@
         Activity 2.1: La classe Personne
       </h3>
       <div class="code-block">
-        <pre><code><span class="keyword">class</span> <span class="method">Personne</span> {
+        <pre><code><span class="keyword">package</span> <span class="method">tp2</span>;
+
+<span class="keyword">public class</span> <span class="method">Personne</span> {
     <span class="keyword">private String</span> cin;
     <span class="keyword">private String</span> nom;
     <span class="keyword">private String</span> prenom;
-    <span class="keyword">private Adresse</span> adresse;
+    <span class="keyword">private</span> <span class="method">Adresse</span> adresse;
 
-    <span class="keyword">public</span> <span class="method">Personne</span>(<span class="keyword">String</span> cin, <span class="keyword">String</span> n, <span class="keyword">String</span> pn, <span class="keyword">Adresse</span> adr) {
+    <span class="keyword">public</span> <span class="method">Personne</span>(<span class="keyword">String</span> cin, <span class="keyword">String</span> n, <span class="keyword">String</span> pn, <span class="method">Adresse</span> adr) {
         <span class="keyword">this</span>.cin = cin;
         <span class="keyword">this</span>.nom = n;
         <span class="keyword">this</span>.prenom = pn;
@@ -78,7 +82,7 @@
         <span class="keyword">this</span>.cin = cin;
         <span class="keyword">this</span>.nom = n;
         <span class="keyword">this</span>.prenom = pn;
-        <span class="keyword">this</span>.adresse = <span class="method">new</span> <span class="method">Adresse</span>(g, cp);
+        <span class="keyword">this</span>.adresse = <span class="keyword">new</span> <span class="method">Adresse</span>(g, cp);
     }
 
     <span class="keyword">public void</span> <span class="method">setCin</span>(<span class="keyword">String</span> cin) {
@@ -86,19 +90,19 @@
     }
 
     <span class="keyword">public String</span> <span class="method">getCin</span>() {
-        <span class="keyword">return this</span>.cin;
+        <span class="keyword">return</span> <span class="keyword">this</span>.cin;
     }
 
     <span class="keyword">public String</span> <span class="method">getNom</span>() {
-        <span class="keyword">return this</span>.nom;
+        <span class="keyword">return</span> <span class="keyword">this</span>.nom;
     }
 
     <span class="keyword">public String</span> <span class="method">getPrenom</span>() {
-        <span class="keyword">return this</span>.prenom;
+        <span class="keyword">return</span> <span class="keyword">this</span>.prenom;
     }
 
-    <span class="keyword">public Adresse</span> <span class="method">getAdresse</span>() {
-        <span class="keyword">return this</span>.adresse;
+    <span class="keyword">public</span> <span class="method">Adresse</span> <span class="method">getAdresse</span>() {
+        <span class="keyword">return</span> <span class="keyword">this</span>.adresse;
     }
 
     <span class="keyword">public void</span> <span class="method">setNom</span>(<span class="keyword">String</span> n) {
@@ -109,25 +113,65 @@
         <span class="keyword">this</span>.prenom = pn;
     }
 
-    <span class="keyword">public void</span> <span class="method">setAdresse</span>(<span class="keyword">Adresse</span> adr) {
+    <span class="keyword">public void</span> <span class="method">setAdresse</span>(<span class="method">Adresse</span> adr) {
         <span class="keyword">this</span>.adresse = adr;
     }
 
     <span class="keyword">@Override</span>
     <span class="keyword">public String</span> <span class="method">toString</span>() {
-        <span class="keyword">return</span> <span class="string">"cin= "</span> + this.cin + <span class="string">", nom= "</span> + this.nom + <span class="string">", prenom= "</span> + this.prenom + <span class="string">", Adresse[gouvernorat= "</span> + this.adresse.getGouvernorat() + <span class="string">", codePostal= "</span> + this.adresse.getCodePostal() + <span class="string">"];"</span>;
+        <span class="keyword">return</span> <span class="string">"cin= "</span> + <span class="keyword">this</span>.cin + <span class="string">", nom= "</span> + <span class="keyword">this</span>.nom + <span class="string">", prenom= "</span> + <span class="keyword">this</span>.prenom + <span class="string">", Adresse[gouvernorat= "</span> + <span class="keyword">this</span>.adresse.getGouvernorat() + <span class="string">", codePostal= "</span> + <span class="keyword">this</span>.adresse.getCodePostal() + <span class="string">"];"</span>;
     }
 }</code></pre>
       </div>
       <div class="result-block">
         <p><strong>Activity's brief explanation:</strong></p>
         <p>
-          This activity showcases how we can create a class with private attributes with one them being 
-          an object of an other class and public methods which also contains a constructor 
-          and an overriding of the toString method
+          This activity showcases how we can create a class with one of the attributes 
+          being an object of an other class that was imported by being in the same package.
         </p>
       </div>
     </div>
+
+    <h3>
+      Activity 2.2: Créons des personnes!!
+    </h3>
+    <div class="code-block">
+      <pre><code><span class="keyword">package</span> <span class="method">tp2</span>;
+
+<span class="keyword">public class</span> <span class="method">Test</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span> [] args) {
+        <span class="method">Adresse</span> a1 = <span class="keyword">new</span> <span class="method">Adresse</span>(<span class="string">"Monastir"</span>, 5000);
+        <span class="method">Adresse</span> a2 = <span class="keyword">new</span> <span class="method">Adresse</span>(<span class="string">"Ben arous"</span>, 1133);
+        a2.<span class="method">setCodePostal</span>(1145);
+        
+        <span class="method">Personne</span> p1 = <span class="keyword">new</span> <span class="method">Personne</span>(<span class="string">"01111111"</span>, <span class="string">"Kbayer"</span>, <span class="string">"Jasser"</span>, <span class="string">"Jendouba"</span>, 8160);
+        <span class="method">Personne</span> p2 = <span class="keyword">new</span> <span class="method">Personne</span>(<span class="string">"02222222"</span>, <span class="string">"Smida"</span>, <span class="string">"Ghayth"</span>, a1);
+        
+        p1.<span class="method">setNom</span>(<span class="string">"Smida"</span>);
+        p1.<span class="method">setAdresse</span>(a1);
+        
+        p1.<span class="method">setNom</span>(<span class="string">"Kbayer"</span>);
+        
+        p2.<span class="method">setNom</span>(<span class="string">"Kbayer"</span>);
+        <span class="method">Adresse</span> ax = <span class="keyword">new</span> <span class="method">Adresse</span>(<span class="string">"Jendouba"</span>, 8160);
+        p2.<span class="method">setAdresse</span>(ax);
+        
+        p2.<span class="method">setNom</span>(<span class="string">"Smida"</span>);
+        
+        <span class="keyword">String</span> ch = p1.<span class="method">toString</span>();
+        <span class="method">System</span>.<span class="method">out</span>.<span class="method">println</span>(ch);
+        ch = p2.<span class="method">toString</span>();
+        <span class="method">System</span>.<span class="method">out</span>.<span class="method">println</span>(ch);
+    }
+}</code></pre>
+    </div>
+    <div class="result-block">
+      <p><strong>Activity's brief explanation:</strong></p>
+      <p>
+        Public class with a main method importing the previously created classes.
+      </p>
+    </div>
+  </div>
       <a href="Index.html" class="cta-button">Back to Home page</a>
     </main>
   </body>

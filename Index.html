@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>Java Compte-rendu Blog</h1>
-      <p class="subtitle">Battikh Youssef</p>
+      <p class="subtitle">Battikh Youssef TP4</p>
     </header>
     <main>
       <h2>Introduction to Object-Oriented Programming in Java</h2>
@@ -154,22 +154,32 @@
       </p>
       <div id="package-system" class="code-example">
         <div class="code-block">
-          <pre><code><span class="comment">// File: com/example/math/Calculator.java</span>
-<span class="keyword">package</span> com.example.math;
+          <pre><code><span class="comment">//File: Desktop/tp2/Adresse.java</span>
+<span class="keyword">package</span> tp2;
+<span class="keyword">public class</span> <span class="method">Adresse</span> {
+    <span class="keyword">private</span> <span class="keyword">String</span> Gouvernorat;
+    <span class="keyword">private</span> <span class="keyword">int</span> codePostal;
 
-<span class="keyword">public class</span> <span class="method">Calculator</span> {
-    <span class="keyword">public int</span> <span class="method">add</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
-        <span class="keyword">return</span> a + b;
+    <span class="keyword">public</span> <span class="method">Adresse</span>(<span class="keyword">String</span> G, <span class="keyword">int</span> cP) {
+        <span class="keyword">this</span>.Gouvernorat = G;
+        <span class="keyword">this</span>.codePostal = cP;
+    }
+
+    <span class="keyword">@Override</span>
+    <span class="keyword">public String</span> <span class="method">toString</span>() {
+        <span class="keyword">return</span> <span class="string">"Adresse[gouvernorat= "</span> + <span class="keyword">this</span>.Gouvernorat + <span class="string">", codePostal= "</span> + <span class="keyword">this</span>.codePostal + <span class="string">"];";</span>
     }
 }
+</code></pre>
 
-<span class="comment">// File: Main.java</span>
-<span class="keyword">import</span> com.example.math.Calculator;
+<pre><code><span class="comment">//File: Desktop/TP2/Test.java</span>
+<span class="keyword">package</span> tp2;
+<span class="keyword">public class</span> <span class="method">Test</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span> [] args) {
+        <span class="method">Adresse</span> a1 = <span class="keyword">new</span> <span class="method">Adresse</span>(<span class="string">"Monastir"</span>, <span class="number">5000</span>);
 
-<span class="keyword">public class</span> <span class="method">Main</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
-        Calculator calc = <span class="keyword">new</span> <span class="method">Calculator</span>();
-        System.<span class="method">out</span>.<span class="method">println</span>(<span class="string">"2 + 3 = "</span> + calc.<span class="method">add</span>(2, 3));
+        <span class="keyword">String</span> ch = a1.<span class="method">toString</span>();
+        <span class="keyword">System.out</span>.<span class="method">println</span>(ch);
     }
 }</code></pre>
         </div>
