@@ -67,6 +67,8 @@ code {
   padding: 1rem;
   border-radius: 5px;
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
 }
 .code-block .keyword {
   color: #c678dd;
